@@ -5,24 +5,29 @@
     <title>Songwriting Prompt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="songwriting.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="songwriting.css">
+    <link rel="stylesheet" type="text/css" href="songwriting.css" />
   </head>
 
   <body>
-<h1 id="sTitle">Songwriting</h1>
-<h2>generator</h2>
+    <header>
+      <h1 id="sTitle">Songwriting</h1>
+      <h2>generator</h2>
+    </header>
 
-<input type="checkbox" name="option1" value="word">Word/Phrase 
-<input type="checkbox" name="option2" value="mood">Mood<br>
-<input type="checkbox" name="option3" value="scene">Scene<br>
-<br>
-<input type="checkbox" name="option4" value="key">Key Signature
-<input type="checkbox" name="option5" value="time">Time Signature<br>
-<input type="checkbox" name="option6" value="bpm">bpm<br>
+    <main>
+      <form onsubmit="checkedStatus()">
+        <input type="checkbox" name="option1" value="word" />Word/Phrase
+        <input type="checkbox" name="option2" value="mood" />Mood<br />
+        <input type="checkbox" name="option3" value="scene" />Scene<br />
+        <br />
+        <input type="checkbox" name="option4" value="key" />Key Signature
+        <input type="checkbox" name="option5" value="time" />Time Signature<br />
+        <input type="checkbox" name="option6" value="bpm" />bpm<br />
 
-<button type="submit" onclick = "checkedStatus()" value="Generate Prompts">Generate Prompts</button>
+        <input type="submit" value="Generate Prompts" />
+      </form>
 
-<div id="display"></div>
-
+      <div id="display"></div>
+    </main>
   </body>
 </html>

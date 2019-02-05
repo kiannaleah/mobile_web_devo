@@ -28,7 +28,7 @@ h2 {
     font-family: 'Courier New', Courier, monospace;
 }
 
-button {
+input[type=submit] {
     margin-top: 2em;
     padding: 1em;
     font-size: 14px;
@@ -36,4 +36,6 @@ button {
     border-radius: 1em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
+    background-color: rgb(42, 175, 126);
+  color: white;
 }
