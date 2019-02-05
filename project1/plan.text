@@ -1,0 +1,22 @@
+Songwriting Prompt Generator Web App
+phase 1
+html outline-Songwriting Generator title 
+check box options for generator (theme, words, time signature, key, scene/story)
+generate button
+display for options checked
+
+Phase 2
+Create arrays to store prompts, time signatures, key, ect.
+Create functions for boxes checked and button clicked
+create function to find random value in array
+Display (CSS formatting) for different options 
+swipe-detect where it's moving 
+
+
+Info-
+Words/Phrases:
+Mood: 
+Scene: 
+Time Signature: 
+Key Signature:
+BPM: 

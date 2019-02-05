@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Chapter 15</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  </head>
+
+  <body>
+      <h2>Baloon Exercise</h2>
+      <p>🎈</p>
+  
+  </body>
+  <script>
+        let p = document.querySelector("p");
+        let size;
+     function bSize(newSize) {
+        size = newSize;
+        p.style.fontSize = size + "px";
+     }
+     bSize(20);
+ 
+     function arrow(event) {
+         if (event.key == "ArrowUp") {
+             if (size > 70) {
+                 p.textContent = "💥";
+                 document.body.removeEventListener("keydown", handleArrow);
+             } else {
+                 bSize(size*1.1);
+                 event.preventDefault();
+             }
+         } else if (event.key == "ArrowDown") {
+             bSize(size * 0.9);
+             event.preventDefault;
+         }
+     }
+     document.body.addEventListener("keydown", arrow);
+     </script>
+</html>

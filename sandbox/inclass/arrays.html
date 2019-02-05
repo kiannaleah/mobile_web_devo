@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Array Activity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+      <main>
+
+      </main>
+    <script>
+    const colors = ['red', 'blue', 'green', 'yellow', 'orange'];
+    for (i = 0; i < colors.length; i++) {
+        console.log(colors[i]);
+    }
+
+    //other way--> takes the first color and puts it in color and then loops to the next one in the loop
+    for(let color of color) {
+        console.log(color);
+    }
+    
+    //for each way
+    colors.forEach(item => {
+        console.log(item);
+    })
+
+    //map atomatically returns values back
+const newArray = numbers.map(function(number){
+    return number * -1;
+});
+console.log(newArray);
+
+//map with arrow function
+    const negNumbers = numbers.map(number=> number * -1);
+
+//generate random numbers 
+//gives random number between 0 and 1
+console.log(Math.random);
+Math.floor(Math.random()*8);
+//for my project
+Math.floor(Math.random()*array.length);
+//use a function 
+function random(num) {
+    return function(){
+    return Math.floor(Math.random()*num);
+    };
+};
+
+const random2 = random;
+const die6 = random(6);
+
+    </script>
+
+  </body>
+</html>

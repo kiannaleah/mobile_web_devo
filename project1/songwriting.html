@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Songwriting Prompt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="songwriting.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="songwriting.css">
+  </head>
+
+  <body>
+<h1 id="sTitle">Songwriting</h1>
+<h2>generator</h2>
+
+<input type="checkbox" name="option1" value="word">Word/Phrase 
+<input type="checkbox" name="option2" value="mood">Mood<br>
+<input type="checkbox" name="option3" value="scene">Scene<br>
+<br>
+<input type="checkbox" name="option4" value="key">Key Signature
+<input type="checkbox" name="option5" value="time">Time Signature<br>
+<input type="checkbox" name="option6" value="bpm">bpm<br>
+
+<button type="submit" onclick = "checkedStatus()" value="Generate Prompts">Generate Prompts</button>
+
+<div id="display"></div>
+
+  </body>
+</html>

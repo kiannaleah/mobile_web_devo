@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <title>Fancy Button Practice</title>
+  <script>
+      function showStar(theButtonClicked) {
+          document.getElementById("result_display").innerHTML = 
+          "<p>You are a Star</p>"
+          theButtonClicked.innerHTML ="Click me again!!"
+      }
+  </script>
+
+  <style>
+      body{
+          color:white;
+          background-color:darkred;
+      }
+
+      #result_display {
+              background-color: darkblue; 
+              width:300px;
+              height:150px;
+              position: relative;
+              top:10px;
+              left:10px;
+          }
+
+  </style>
+</head>
+
+<body>
+    <button onclick="showStar(this)">Click Me</button>
+    <section id = "result_display"></section>
+</body>
+</html>

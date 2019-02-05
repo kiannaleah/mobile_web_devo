@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Clothing Customers</title>
+    <script>
+        function addAndSaveCustomer() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value * 1;
+            var inseam = document.getElementById("inseam").value * 1;
+            var aClothingCustomer = {
+                "name": name,
+                "age": age,
+                "inseam": inseam
+            }
+            var allCustomers = null;
+            var storedCustomersString = localStorage["all_customers"];
+            if (storedCustomersString == null) {
+                allCustomers = [];
+            } 
+            else {
+                allCustomers = JSON.parse(storedCustomersString);
+            }
+            allCustomers.push(aClothingCustomer);
+            var allCustomersString = JSON.stringify(allCustomers);
+            localStorage["all_customers"] = allCustomersString;
+            showAllCustomers();
+
+            document.getElementById("name").value = null;
+            document.getElementById("age").value = null;
+            document.getElementById("inseam").value = null;
+        }
+
+        function showAllCustomers() {
+            var storedCustomersString = localStorage["all_customers"];
+            if (storedCustomersString != null) {
+                var allCustomers = JSON.parse(storedCustomersString);
+                var customerDisplayer = document.getElementById("all_customers_display");
+                customerDisplayer.innerHTML = null;
+                for (var i = 0; i < allCustomers.length; i++) {
+                    var aClothingCustomer = allCustomers[i];
+                    customerDisplayer.innerHTML += "<hr><p>Customer: " + aClothingCustomer["name"] + "</p>" +
+                        "<p>Age: " +
+                        aClothingCustomer["age"] + "</p>" + "<p>Inseam: " + aClothingCustomer["inseam"] + "</p>";
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body{
+      background-color: darkcyan;
+    }
+
+    input{
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px #666666 inset;
+      height: 25px;
+      width: 200px;
+      text-indent: 5px;
+    }
+
+    input:focus{
+      outline: none;
+    }
+
+    #customer_entry_area {
+      width: 500px;
+      padding-left: 5px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px #666666 inset;
+      text-indent: 5px;
+    }
+
+    textarea {
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px #666666 inset;
+      width: 90%;
+      height: 150px;
+      text-indent: 5px;
+      resize: none;
+      overflow: scroll;
+    }
+    img{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px #666666 inset;
+    }
+    </style>
+</head>
+
+<body onload="showAllCustomers()">
+    <section id="customer_entry_area">
+        <h1>Our Clothing Customers</h1>
+        <input id="name" placeholder="Name">
+        <input id="age" placeholder="Age">
+        <input id="inseam" placeholder="Inseam">
+        <br>
+        <img src="/sandbox/photo/add_customer.png" onclick="addAndSaveCustomer()">
+    </section>
+    <section id="all_customers_display"></section>
+</body>
+
+</html>

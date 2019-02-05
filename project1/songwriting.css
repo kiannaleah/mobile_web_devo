@@ -1,0 +1,39 @@
+/*
+CSS for Songwriting Prompt Generator Web App
+
+1. Overall Styles (font, spacing, color)
+2. Styling of checkboxes
+3. Styling of generator button (fixed?)
+4. Format Display
+ */
+
+
+/*Songwriting Prompt Header*/
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1, h2 {
+color: crimson; 
+}
+
+h1 {
+    font-style: italic;
+}
+
+h2 {
+    margin-left: 83px;
+    margin-top: -30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    margin-top: 2em;
+    padding: 1em;
+    font-size: 14px;
+    border-style: none;
+    border-radius: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
