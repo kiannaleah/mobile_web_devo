@@ -40,6 +40,13 @@ var bpm = [ "80-115", "90-110", "120", "120-160", "140", "66-76",
 ];
 
 function checkedStatus() {
+    //loop through all the check boxes and see which ones are checked
+    
 
+}
+
+
+function random(){
+    Math.floor(Math.random * Array.length)
 }
 
