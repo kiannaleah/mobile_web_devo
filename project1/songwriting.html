@@ -10,24 +10,26 @@
 
   <body>
     <header>
-      <h1 id="sTitle">Songwriting</h1>
+      <h1 id="sTitle">Songwriting </h1>
       <h2>generator</h2>
     </header>
 
     <main>
-      <form onsubmit="checkedStatus()">
-        <input type="checkbox" name="option1" value="word" />Word/Phrase
-        <input type="checkbox" name="option2" value="mood" />Mood<br />
-        <input type="checkbox" name="option3" value="scene" />Scene<br />
+      <form class="songForm" id="songForm">
+        <label class="container"><input type="checkbox" name="prompt[]" value="word" />Word/Phrase <br /> <span class="checkmark"></span></label>
+        <label class="container"> <input type="checkbox" name="prompt[]" value="mood" />Mood<br /> <span class="checkmark"></span></label>
+        <label class="container"><input type="checkbox" name="prompt[]" value="scene" />Scene<br /> <span class="checkmark"></span></label>
         <br />
-        <input type="checkbox" name="option4" value="key" />Key Signature
-        <input type="checkbox" name="option5" value="time" />Time Signature<br />
-        <input type="checkbox" name="option6" value="bpm" />bpm<br />
+        <label class="container"><input type="checkbox" name="prompt[]" value="key" />Key Signature <br /> <span class="checkmark"></span></label>
+        <label class="container"><input type="checkbox" name="prompt[]" value="time" />Time Signature<br /> <span class="checkmark"></span></label>
+        <label class="container"><input type="checkbox" name="prompt[]" value="bpm" />bpm<br /> <span class="checkmark"></span></label>
 
-        <input type="submit" value="Generate Prompts" />
+        <input type="button" value="Generate Prompts" onclick= "checkedStatus()" />
       </form>
 
-      <div id="display"></div>
+      <section id = "finalPrompts">
+        <ul id="display"></ul>
+      </section>
     </main>
   </body>
 </html>
