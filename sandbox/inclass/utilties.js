@@ -7,8 +7,6 @@ export function getJSON(url) {
             throw Error(response.statusText);
         } else {
             return response.json()
-        }
-        return response.json();
     })
     .catch(function(error){
 console.log(error);

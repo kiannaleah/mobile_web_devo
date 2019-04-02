@@ -10,36 +10,67 @@ come down around the title--
 5. create deocration animation for heading on illustrator and put it in
 */
 
-//Note setup code
-const jTitle = document.querySelector('.title');
-const jEntry = document.querySelector('.entry');
-const defaultTitle = 'Title For Your Writing'
-const defaultEntry = 'Write your own thoughts and INSPIRE...'
-
-
-let save = () => {
-     localStorage['entry'] = jEntry.innerHTML;
-    localStorage['title'] = jTitle.innerHTML;
- }
-
-//launch function...does it work for mobile?
-jTitle.onkeyup = () => save();
-jEntry.onkeyup = () => save();
-
 //get quote from API 
-
-const url = 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1';
-function getJSON(url) {
-    return fetch(url)
-    .then(function(response) {
-        if(!response.ok) {
-            throw Error(response.statusText);
-        } else {
-            return response.json()
-    }
-})
-    .catch(function(error) {
-console.log(error);
+const API_KEY = 'f08fa284bfmsh444f1a1e0572292p1ac7f4jsnfe63d66f7001';
+const URL = 'https://qvoca-bestquotes-v1.p.rapidapi.com/quote';
+function getQuote(URL) {
+    var myHeaders = new Headers();
+myHeaders.append('RapidAPIProject', 'default-application_3723');
+myHeaders.append('X-RapidAPI-Key', API_KEY);
+var myInit = { 
+  method: 'GET',
+  headers: myHeaders,
+  mode: 'cors',
+  cache: 'default' 
+};
+        return fetch(URL,myInit)
+        .then(function(response) {
+            return response.json();
+        })
+    .catch (function(error) {
+        console.log(error);
     })
+    
+}
+
+async function quoteButton() {
+    const quote = await getQuote(URL);
+    console.log(quote);
+    displayQuote(quote);
+}
+
+//function to display quote
+function displayQuote(quote){
+    let item = document.getElementById("quotePrompt");
+    item.setAttribute("data-id", quote.id);
+    item.innerHTML = `${quote.message} - ${quote.author}`;
+    
+}
+
+
+//local storage
+
+//save button 
+function saveButton() {
+const quoteElement = document.getElementById("quotePrompt");
+    console.dir(quoteElement);
+    const savedNote = {
+        saveQuote: quoteElement.innerHTML,
+        saveTitle: document.getElementById("title").innerHTML,
+        saveEntry: document.getElementById("entry").innerHTML,
+    }
+   
+
+    localStorage.setItem(quoteElement.dataset.id, JSON.stringify(savedNote));
+ 
+    displayOldEntry(savedNote);
+    
+}
+
+function displayOldEntry(savedNote){
+    JSON.parse(localStorage.getItem(savedNote));
+    let item = document.createElement("a");
+    item.innerHTML = `${savedNote.saveTitle} `;
+    document.getElementById("linksToOld").appendChild(item);
 }
 

@@ -10,25 +10,37 @@
 
   <body>
     <header>
-      <h1 id="title">
-        <span id="inspired">Inspired</span> <span id="write">Write</span>
+      <h1 id="logo">
+        <span id="inspired">Inspired</span> <span id="write">Write</span> 
       </h1>
-      <img src="">
+      <img id="pencil" src="/project2/pencil.svg">
+      <img id="star" src = "/project2/star.svg">
       <h4>
-        Need inspiration? We've got you! Use a quote to inspire your writing.
+        Needing inspiration? Use a quote to inspire your writing.
       </h4>
     </header>
 
     <main>
+      <section>
       <div>
-        <h3>Quote:</h3>
+        <h2>Quote:</h2> <input type="button" value="Get Quote" onclick= "quoteButton()" /> 
+       <br>
         <p id="quotePrompt"></p>
+  
       </div>
+      <br>
       <div id="editor">
-        <div id="title" class="title" contenteditable="true">insert your title here </div>
+        <textarea id="title" class="title">insert your title here... </textarea>
         <br />
-        <div id="entry" class="entry" contenteditable="true">write your own thoughts and INSPIRE...</div>
+        <textarea id="entry" class="entry"> your wonderful thoughts go here...</textarea>
+        <br>
+        <input type="button" value="Save" onclick= "saveButton()" /> 
       </div>
+    </section>
+    <br>
+
+    <a href = "links.html"> view old entries
+
     </main>
 
     <footer></footer>
