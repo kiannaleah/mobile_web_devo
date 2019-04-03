@@ -5,9 +5,10 @@ vector graphics of stars and glitter or something like that
 come down around the title--
 1. pull quote from API when generate quote prompt comes up
 2. Create text box note taking area 
-3. Code that temporarily saves entry
-4. make it display old journal entries when new prompt is loaded
-5. create deocration animation for heading on illustrator and put it in
+3. Code that saves and stores entry
+4. make it display old journal entries on other page
+5. code that lets you see an entire old entry when title is clicked
+ALSO create deocration animation for heading on illustrator and put it in
 */
 
 //get quote from API 
@@ -52,25 +53,32 @@ function displayQuote(quote){
 
 //save button 
 function saveButton() {
+let eNotes = JSON.parse(localStorage.getItem('notes'));
+if (!eNotes) {
+    eNotes = [];
+}
 const quoteElement = document.getElementById("quotePrompt");
     console.dir(quoteElement);
     const savedNote = {
         saveQuote: quoteElement.innerHTML,
-        saveTitle: document.getElementById("title").innerHTML,
-        saveEntry: document.getElementById("entry").innerHTML,
+        saveTitle: document.getElementById("title").value,
+        saveEntry: document.getElementById("entry").value,
     }
-   
+   eNotes.push(savedNote);
 
-    localStorage.setItem(quoteElement.dataset.id, JSON.stringify(savedNote));
- 
-    displayOldEntry(savedNote);
+localStorage.setItem('notes', JSON.stringify(eNotes));
+}
     
+//display note titles on links page
+function displayOldEntry(){
+    let saved = JSON.parse(localStorage.getItem('notes'));
+    console.log(saved);
+    for (i=0; i < saved.length; i++) {
+    let item = document.createElement("a");
+    item.innerHTML = `Title: ${saved[i].saveTitle}`;
+    document.getElementById("linksToOld").appendChild(item);
+    }
 }
 
-function displayOldEntry(savedNote){
-    JSON.parse(localStorage.getItem(savedNote));
-    let item = document.createElement("a");
-    item.innerHTML = `${savedNote.saveTitle} `;
-    document.getElementById("linksToOld").appendChild(item);
-}
+
 
