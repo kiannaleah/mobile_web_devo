@@ -107,6 +107,10 @@ input[type=button]:hover {
     text-decoration: underline;
 }
 
+input[type=button]:active {
+    color: gainsboro;
+}
+
 #linksToOld a{
     display: block;
     margin-top: 1em;
