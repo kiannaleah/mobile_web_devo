@@ -75,10 +75,13 @@ function displayOldEntry(){
     console.log(saved);
     for (i=0; i < saved.length; i++) {
     let item = document.createElement("a");
-    item.innerHTML = `Title: ${saved[i].saveTitle}`;
+    item.setAttribute('href', 'displayNote.html');
+    item.innerHTML = `${saved[i].saveTitle}`;
     document.getElementById("linksToOld").appendChild(item);
     }
 }
 
-
+function oldEntry() {
+    
+}
 

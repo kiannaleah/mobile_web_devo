@@ -112,6 +112,23 @@ input[type=button]:hover {
     margin-top: 1em;
     font-family: 'Montserrat', sans-serif;
     color: black;
-    
 }
 
+#linksToOld a:active {
+    color: gray;
+}
+
+#writeNew {
+    color: white;
+    background-color: palevioletred;
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+#writeNew:hover {
+    text-decoration: underline;
+}
+
+#return {
+    color: black;
+}
