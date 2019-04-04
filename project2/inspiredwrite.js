@@ -72,28 +72,27 @@ function displayOldEntry() {
   console.log(saved);
   for (i = 0; i < saved.length; i++) {
     let item = document.createElement("a");
-    item.setAttribute("href", "displayNote.html");
+    item.setAttribute("href", "displayNote.html?id="+i);
     item.innerHTML = `${saved[i].saveTitle}`;
     document.getElementById("linksToOld").appendChild(item);
   }
 }
 
 function oldEntry() {
-    
-  
+let linkId = window.location.search.substring(1);
+
+let id = linkId.substring(3, linkId.length);
+console.log(id);
 let saved = JSON.parse(localStorage.getItem("notes"));
-  
-  for (i = 0; i < saved.length; i++) {
-    if (saved[i].saveTitle == title) {
+
       let oldTitle = document.createElement("h2");
       let oldQuote = document.createElement("p");
       let oldEntry = document.createElement("p");
-      oldTitle.innerHTML = `${saved[i].saveTitle}`;
-      oldQuote.innerHTML = `${saved[i].saveQuote}`;
-      oldEntry.innerHTML = `${saved[i].saveEntry}`;
+      oldTitle.innerHTML = `${saved[id].saveTitle}`;
+      oldQuote.innerHTML = `${saved[id].saveQuote}`;
+      oldEntry.innerHTML = `${saved[id].saveEntry}`;
       document.getElementById("noteTitle").appendChild(oldTitle);
       document.getElementById("noteQuote").appendChild(oldQuote);
       document.getElementById("noteEntry").appendChild(oldEntry);
-    }
-  }
+
 }
