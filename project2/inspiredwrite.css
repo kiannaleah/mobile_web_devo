@@ -132,3 +132,8 @@ input[type=button]:hover {
 #return {
     color: black;
 }
+
+#miniTitle {
+    font-size: 1.2em;
+    
+}
